@@ -1,0 +1,224 @@
+/* font-family: 'Acme', sans-serif;
+font-family: 'Barriecito', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Courgette', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Lumanosimo', cursive;
+font-family: 'Rubik Wet Paint', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Cinzel&family=Courgette&family=Dancing+Script:wght@700&family=Lumanosimo&family=Rubik+Wet+Paint&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    width: 100%;
+    height: 98px;
+    position: fixed;
+    display: flex;
+    /* border: 2px solid brown; */
+    margin-top: -1px;
+    align-items: end;
+    background-color: rgb(252, 254, 255);
+}
+
+#navbar .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+    padding-left: 73px;
+    /* font-weight: bolder; */
+
+
+}
+
+.navelements {
+    /* position: ;
+    top: 2px;
+    right: 44px; */
+    padding-left: 398px;
+}
+
+.navelements li {
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+    padding: 10px 45px;
+
+
+
+
+}
+
+.navelements li a {
+    text-decoration: none;
+    color: rgba(32, 32, 31, 0.812);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+}
+
+.navelements li a:hover {
+
+    color: black;
+    font-size: 30px;
+}
+
+.foot {
+    /* border: 2px solid rgb(244, 5, 45); */
+    position: absolute;
+    bottom: -306px;
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+}
+
+.foot img {
+
+    padding: 20px;
+
+
+}
+
+.crline {
+    bottom: -326px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* border: 2px solid yellow; */
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.crline p {
+    font-size: 12px;
+    font-family: 'Acme', sans-serif;
+    letter-spacing: 2px;
+
+
+}
+
+
+/* body */
+
+.mhead {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    padding-top: 170px;
+}
+
+.container{
+    /* border: 2px solid red; */
+    display: flex;
+    margin: 20px 60px;
+
+}
+.box1 img{
+    /* border: 2px solid green; */
+    height: 772px;
+    width: 588px;
+}
+.box2{
+    padding-top: 100px;
+    /* border: 2px solid yellow; */
+    text-align: center;
+
+}
+.box2 h2{
+    font-family: 'Cinzel', serif;
+    font-size: xx-large;
+
+}
+.box2 p{
+    text-align: justify;
+    padding: 0px 86px;
+    padding-top: 30px;
+    font-size: large;
+    font-family: 'Acme', sans-serif;
+    
+
+}
+.box2 a{
+    text-decoration: none;
+    color: black;
+
+}
+form{
+    padding-top: 30px;
+    
+    
+    
+}
+form h4{
+    font-family: 'Cinzel', serif;
+
+}
+form  label{
+    display: flex;
+    height: 30px;
+    width: 250px;
+    flex-direction: column;
+
+}
+#fname{
+    width: 254px;
+    margin-right: 372px;
+    margin-bottom: 14px;
+    height: 25px;
+}
+#lname{
+    width: 254px;
+    margin-right: 372px;
+    margin-bottom: 14px;
+    height: 25px;
+}
+#email{
+    width: 254px;
+    margin-right: 372px;
+    margin-bottom: 14px;
+    height: 25px;
+}
+#subject{
+    width: 254px;
+    margin-right: 372px;
+    margin-bottom: 14px;
+    height: 25px;
+}
+#message{
+    width: 254px;
+    margin-right: 372px;
+    margin-bottom: 14px;
+    height: 25px;
+    /* position: relative; */
+    resize: none;
+
+}
+.emailcls{
+    margin-left: -14px;
+}
+.subjectcls{
+    margin-left: -12px;
+}
+.messagecls{
+    margin-left: -10px;
+}
+.butn{
+    padding: 3px 7px;
+    border: 1px solid rgb(141, 141, 140) ;
+    background-color: azure;
+    color: black;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: -199px;
+    cursor: pointer;
+}
+

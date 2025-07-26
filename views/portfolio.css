@@ -1,0 +1,207 @@
+/* font-family: 'Acme', sans-serif;
+font-family: 'Barriecito', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Courgette', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Lumanosimo', cursive;
+font-family: 'Rubik Wet Paint', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Cinzel&family=Courgette&family=Dancing+Script:wght@700&family=Lumanosimo&family=Rubik+Wet+Paint&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    width: 100%;
+    height: 98px;
+    position: fixed;
+    display: flex;
+    /* border: 2px solid brown; */
+    margin-top: -1px;
+    align-items: end;
+    background-color: rgb(252, 254, 255);
+}
+
+#navbar .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+    padding-left: 73px;
+    /* font-weight: bolder; */
+
+
+}
+
+.navelements {
+    /* position: ;
+    top: 2px;
+    right: 44px; */
+    padding-left: 398px;
+}
+
+.navelements li {
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+    padding: 10px 45px;
+
+
+
+
+}
+
+.navelements li a {
+    text-decoration: none;
+    color: rgba(32, 32, 31, 0.812);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+}
+
+.navelements li a:hover {
+
+    color: black;
+    font-size: 30px;
+}
+
+.foot {
+    /* border: 2px solid rgb(244, 5, 45); */
+    position: absolute;
+    bottom: -325px;
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+}
+
+.foot img {
+
+    padding: 20px;
+
+
+}
+
+.crline {
+    bottom: -330px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* border: 2px solid yellow; */
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.crline p {
+    font-size: 12px;
+    font-family: 'Acme', sans-serif;
+    letter-spacing: 2px;
+
+
+}
+
+
+
+
+
+
+.imgcont{
+    display: flex;
+    /* justify-content:space-between; */
+   
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 90%;
+    margin: 0px 80px;
+    margin-top: 50px;
+
+}
+
+
+
+
+
+.mheading h1{
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Cinzel', serif;
+}
+
+
+
+
+.box1{
+    /* border: 2px solid green; */
+    background: url("/static/oneofthree.webp");
+    background-size: cover;
+    margin: 0px 20px;
+    height: 800px;
+    width: 438px;
+   display: flex;
+   flex-direction: column;
+   justify-content:flex-start;
+   align-items: center;
+
+}
+.imgcont h2 {
+padding-top: 155px;
+font-family: 'Cinzel', serif;
+color: aliceblue;
+font-size: xx-large;
+margin-bottom: 20px;
+
+}
+
+.imgcont button{
+    padding: 5px 20px;
+    background:transparent;
+    opacity: 0.9;
+    border-radius: 7px;
+    border: 1px solid rgb(251, 250, 250);
+    color: azure;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+
+}
+.imgcont button:hover{
+    border: 2px solid black;
+    /* font-style: italic; */
+    
+}
+
+
+.box2{
+    background: url("/static/twoofthree.webp")  ;
+    /* border: 2px solid blue; */
+    background-size: cover;
+    margin: 0px 20px;
+    height: 800px;
+    width: 438px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+.box3{
+    background: url("/static/threeofthree.webp")  ;
+    /* border: 2px solid yellow; */
+    background-size: cover;
+    margin: 0px 20px; 
+    
+    height: 800px;
+    width: 438px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    
+}

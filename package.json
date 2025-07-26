@@ -1,0 +1,16 @@
+{
+  "name": "food-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "appl.js",
+  "scripts": {
+    "start": "node appl.js"
+  },
+  "author": "teja",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3",
+    "pug": "^3.0.2"
+  }
+}
