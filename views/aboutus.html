@@ -6,75 +6,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Photography | By RaviTeja</title>
     <link rel="shortcut icon" href="/static/fast-food-outline.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../views/aboutus.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Cinzel&family=Courgette&family=Dancing+Script:wght@700&family=Lumanosimo&family=Rubik+Wet+Paint&display=swap');
+
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Acme', sans-serif; 
+            line-height: 1.6;
+            color: #333;
+        }
+        .navbar {
+            height: 98px;
+            background-color: rgb(252, 254, 255);
+            z-index: 1000;
+            padding: 0 73px;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        .navbar .navbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 25px;
+            letter-spacing: 5px;
+            color: #333;
+            padding-bottom: 10px;
+            margin-right: auto;
+        }
+
+        .navbar-nav .nav-link {
+            text-decoration: none;
+            color: rgba(32, 32, 31, 0.812);
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 25px;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black;
+            font-size: 22px;
+        }
+
+        .mpart {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 140px; 
+            padding: 20px 0; 
+            justify-content: center;
+        }
+
+        .mpart img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px; 
+            padding: 0 15px;
+        }
+
+        .aboutpara {
+            margin-left: 30px;
+            margin-right: 87px;
+            text-align: justify;
+            font-size: 18px; 
+            font-weight: bold;
+            padding: 0 15px;
+            max-width: 600px; 
+        }
+
+        .aboutpara h3,
+        .aboutpara h5 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            text-decoration: underline;
+            text-decoration-color: rgba(64, 64, 64, 0.592);
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .aboutpara h5 {
+            font-size: 1.5em; 
+        }
+        .aboutpara br { 
+            content: "";
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+
+        .foot {
+            display: none; 
+        }
+
+        .crline {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            background-color: rgb(252, 254, 255);
+            border-top: 1px solid #eee;
+        }
+
+        .crline p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            .navbar .container-fluid {
+                justify-content: space-between;
+            }
+            .navbar-expand-md .navbar-collapse {
+                justify-content: flex-end;
+            }
+        }
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 0 50px;
+            }
+            .navbar .navbar-brand {
+                font-size: 22px;
+            }
+            .navbar-nav .nav-link {
+                padding: 10px 20px;
+            }
+        }
+
+
+        @media (max-width: 991.98px) {
+            .navbar {
+                height: auto;
+                align-items: center;
+                padding: 10px 20px;
+                flex-direction: column;
+            }
+            .navbar .navbar-brand {
+                padding-bottom: 5px;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+            .navbar-toggler {
+                margin-top: 10px;
+            }
+            .navbar-collapse {
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-link {
+                padding: 8px 0;
+            }
+
+            .mpart {
+                margin-top: 120px; 
+                flex-direction: column; 
+                align-items: center;
+            }
+            .mpart img {
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+            .aboutpara {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center; 
+                font-size: 16px;
+                padding: 0 20px;
+            }
+            .aboutpara h3,
+            .aboutpara h5 {
+                font-size: 1.5em;
+            }
+        }
+
+
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand {
+                font-size: 20px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 16px;
+            }
+            .mpart img {
+                width: 90%;
+            }
+            .aboutpara {
+                font-size: 15px;
+                padding: 0 15px;
+            }
+            .aboutpara h3,
+            .aboutpara h5 {
+                font-size: 1.3em;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .navbar .navbar-brand {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            .mpart {
+                margin-top: 100px; 
+            }
+            .mpart img {
+                width: 95%; 
+            }
+            .aboutpara {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            .aboutpara h3,
+            .aboutpara h5 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <div id="navbar">
-        <div class="logo">
-            <h4>RaviTeja</h4>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">RaviTeja</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/books">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mpart">
+            <img src="/static/aboutsidepic.jpg" alt="About Image">
+            <div class="aboutpara">
+                <h3> ABOUT JADE</h3>
+                <br>
+                Welcome to the world of Jade, a passionate food photographer dedicated to capturing the essence and beauty of culinary creations. With an artistic eye and a deep understanding of light and composition, Jade transforms dishes into visual masterpieces that tell a story. From vibrant ingredients to delectable finished plates, every photograph aims to tantalize the senses and inspire.
+                <br>
+                <br>
+                This space is dedicated to sharing Jade's journey, philosophy, and the meticulous process behind each stunning shot. Whether it's for editorial features, cookbooks, restaurant menus, or personal brands, Jade works closely with chefs and food stylists to bring their visions to life through captivating imagery. Discover the art of food photography, where passion meets precision.
+                <br>
+                <br>
+                <h5> Education</h5>
+                <br>
+                Jade is a graduate of the prestigious [Name of Photography School/University] with a specialization in Commercial Photography, focusing intensely on still life and culinary arts. This rigorous program honed technical skills in lighting, composition, and post-processing, providing a strong foundation for a career dedicated to food.
+                <br>
+                <br>
+               <h5> Awards & Nominations:</h5>
+               <br>
+                Jade's work has been recognized in various prestigious competitions and publications, including the [Award 1 Name] for culinary photography excellence and a nomination for the [Award 2 Name] for innovative food styling. Featured in [Magazine Name] and [Website Name] for unique visual storytelling in the food industry.
+            </div>
         </div>
-        <div class="navelements">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/aboutus">About Us</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/books">Books</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+        <div class="crline">
+            <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
+        </div>
         </div>
 
-    </div>
-
-    
-    <div class="mpart">
-        <img src="/static/aboutsidepic.jpg" alt="">
-        <div class="aboutpara">
-            <h3> ABOUT JADE</h3>
-            <br>
-            I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
-            click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you
-            like on your page.
-            <br>
-            <br>
-
-            ​
-
-            This is a great space to write long text about your company and your services. You can use this space to go
-            into a little more detail about your company.
-            <br>
-            <br>
-
-            <h5> Education</h5>
-            <br>
-
-            I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
-            click me to add your own content and make changes to the font.
-            <br>
-            <br>
-           <h5> Awards & Nominations:</h5>
-           <br>
-            I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.
-        </div>
-    </div>
-
-
-
-
-    
-    <div class="foot">
-        <a href="https://twitter.com/Raviteja_2674"><img src="static/Twitter.webp" alt=""></a>
-        <a href="https://www.instagram.com/raviteja_2674/"><img src="static/Instagram.webp" alt=""></a>
-        <a href="https://www.facebook.com/profile.php?id=100087101992823"><img src="static/facebook.webp" alt=""></a>
-
-    </div>
-    <div class="crline">
-        <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
-    </div>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigF/h/6tVROV7LNCQ" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

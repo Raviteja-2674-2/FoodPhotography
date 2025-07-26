@@ -4,73 +4,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <title>Food Photography | By RaviTeja</title>
     <link rel="shortcut icon" href="/static/fast-food-outline.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../views/editorial.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        /* Font Imports */
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Cinzel&family=Courgette&family=Dancing+Script:wght@700&family=Lumanosimo&family=Rubik+Wet+Paint&display=swap');
+
+        /* Universal Box Sizing */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Acme', sans-serif; /* Unified font for the entire website */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            height: 98px;
+            background-color: rgb(252, 254, 255);
+            z-index: 1000;
+            padding: 0 73px;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        .navbar .navbar-brand {
+            font-family: 'Cinzel', serif; /* Keeping Cinzel for the prominent brand name */
+            font-size: 25px;
+            letter-spacing: 5px;
+            color: #333;
+            padding-bottom: 10px;
+            margin-right: auto;
+        }
+
+        .navbar-nav .nav-link {
+            text-decoration: none;
+            color: rgba(32, 32, 31, 0.812);
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 25px;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black;
+            font-size: 22px;
+        }
+
+        /* Main Content - Editorial Specific */
+        .upphead {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding-top: 150px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        .upphead .backbtn {
+            text-decoration: none;
+            color: black;
+            font-family: 'Acme', sans-serif;
+            font-size: 1.1em;
+            margin-right: 20px;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .upphead .backbtn:hover {
+            background-color: #f0f0f0;
+        }
+        .upphead h1 {
+            font-family: 'Cinzel', serif; /* Distinct font for title */
+            font-size: 2.8em;
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        .mainpart {
+            display: flex;
+            flex-wrap: wrap; /* Allow columns to wrap */
+            justify-content: center; /* Center items horizontally */
+            padding: 20px 15px; /* Adjust padding */
+            margin-bottom: 50px;
+        }
+
+        .box1, .box2 {
+            display: flex;
+            flex-direction: column; /* Stack images vertically within boxes */
+            margin: 10px; /* Space between main boxes */
+            flex: 1 1 45%; /* Approx half width for two columns on large screens */
+            min-width: 300px; /* Minimum width for responsiveness */
+        }
+
+        .upperbox {
+            display: flex;
+            flex-wrap: wrap; /* Allow images to wrap within upperbox */
+            justify-content: center;
+            margin-bottom: 10px; /* Space below upperbox */
+        }
+
+        .upperbox img {
+            width: calc(50% - 10px); /* Approx half width for two images */
+            height: auto;
+            display: block;
+            margin: 5px; /* Space around individual images */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .downbox {
+            padding: 5px;
+            text-align: center;
+        }
+
+        .downbox img {
+            width: 100%; /* Make image fill its container */
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .box2 img {
+            width: 100%; /* Make image fill its container */
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Footer Styling */
+        .foot {
+            display: none; /* Hide the social icons section as requested */
+        }
+
+        .crline {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            background-color: rgb(252, 254, 255);
+            border-top: 1px solid #eee;
+        }
+
+        .crline p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* --- Responsive Adjustments (Media Queries) --- */
+
+        /* Navbar: Toggle for md breakpoint and below (768px) */
+        @media (min-width: 768px) {
+            .navbar .container-fluid {
+                justify-content: space-between;
+            }
+            .navbar-expand-md .navbar-collapse {
+                justify-content: flex-end;
+            }
+        }
+
+        /* For screens smaller than 1200px */
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 0 50px;
+            }
+            .navbar .navbar-brand {
+                font-size: 22px;
+            }
+            .navbar-nav .nav-link {
+                padding: 10px 20px;
+            }
+
+            .upphead h1 {
+                font-size: 2.2em;
+            }
+            .mainpart {
+                max-width: 960px;
+            }
+            .box1, .box2 {
+                flex: 1 1 48%;
+            }
+        }
+
+        /* For screens smaller than 992px (tablets) */
+        @media (max-width: 991.98px) {
+            /* Adjustments for collapsed navbar */
+            .navbar {
+                height: auto;
+                align-items: center;
+                padding: 10px 20px;
+                flex-direction: column;
+            }
+            .navbar .navbar-brand {
+                padding-bottom: 5px;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+            .navbar-toggler {
+                margin-top: 10px;
+            }
+            .navbar-collapse {
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-link {
+                padding: 8px 0;
+            }
+
+            .upphead {
+                flex-direction: column;
+                padding-top: 120px;
+                padding-bottom: 20px;
+            }
+            .upphead .backbtn {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .upphead h1 {
+                font-size: 2em;
+                margin-top: 0;
+            }
+
+            .mainpart {
+                flex-direction: column; /* Stack box1 and box2 vertically */
+                align-items: center;
+                max-width: 720px;
+            }
+            .box1, .box2 {
+                flex: 1 1 100%; /* Take full width when stacked */
+                margin: 10px 0;
+                max-width: 500px; /* Max width for images */
+            }
+            .upperbox img {
+                width: calc(100% - 10px); /* Stack images within upperbox */
+            }
+            .downbox img, .box2 img {
+                width: 100%;
+            }
+        }
+
+        /* For screens smaller than 768px (large phones) */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand {
+                font-size: 20px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 16px;
+            }
+
+            .upphead h1 {
+                font-size: 1.8em;
+            }
+            .upphead .backbtn {
+                font-size: 1em;
+                padding: 4px 8px;
+            }
+            .box1, .box2 {
+                max-width: 95%;
+            }
+        }
+
+        /* For screens smaller than 576px (small phones) */
+        @media (max-width: 575.98px) {
+            .navbar .navbar-brand {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+
+            .upphead {
+                padding-top: 100px;
+            }
+            .upphead h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <div id="navbar">
-        <div class="logo">
-            <h4>RaviTeja</h4>
-        </div>
-        <div class="navelements">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/aboutus">About Us</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/books">Books</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="upphead">
-        <a href="/portfolio" class="backbtn">
-            <h4> &#60;  Back to Portfolio</h4>
-        </a>
-        
-
-        <h1>Edit</h1>
-    </div>
-    <div class="mainpart">
-
-        <div class="box1">
-            <div class="upperbox">
-                <img src="/static/655789de37e740c0977186eeece8ae51.jpg" alt="">
-                <img src="/static/84770f_1522cb7669e6458188a6502ae0ff80b2~mv2_d_1800_1200_s_2.jpg" alt="">
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html">RaviTeja</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="books.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="downbox">
-                <img src="/static/84770f_a1bf19a2e9a8419780ccf6742281aa31~mv2_d_3822_2531_s_4_2.jpg" alt="">
+        </nav>
+        <div class="upphead">
+            <a href="portfolio.html" class="backbtn">
+                <h4> &#60; Back to Portfolio</h4>
+            </a>
+            <h1>Editorial</h1>
+        </div>
+        <div class="mainpart">
+            <div class="box1">
+                <div class="upperbox">
+                    <img src="/static/655789de37e740c0977186eeece8ae51.jpg" alt="Editorial Photo 1">
+                    <img src="/static/84770f_1522cb7669e6458188a6502ae0ff80b2~mv2_d_1800_1200_s_2.jpg" alt="Editorial Photo 2">
+                </div>
+                <div class="downbox">
+                    <img src="/static/84770f_a1bf19a2e9a8419780ccf6742281aa31~mv2_d_3822_2531_s_4_2.jpg" alt="Editorial Photo 3">
+                </div>
             </div>
-
-
-        </div>
-        <div class="box2">
-            <img src="/static/84770f_cc4e5621c21343fbb6b279cd8dbdc365~mv2_d_5184_3456_s_4_2.jpg" alt="">
-
+            <div class="box2">
+                <img src="/static/84770f_cc4e5621c21343fbb6b279cd8dbdc365~mv2_d_5184_3456_s_4_2.jpg" alt="Editorial Photo 4">
+            </div>
         </div>
 
-    </div>
+        <div class="crline">
+            <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
+        </div>
+        </div>
 
-
-
-
-    <div class="foot">
-        <a href="https://twitter.com/Raviteja_2674"><img src="static/Twitter.webp" alt=""></a>
-        <a href="https://www.instagram.com/raviteja_2674/"><img src="static/Instagram.webp" alt=""></a>
-        <a href="https://www.facebook.com/profile.php?id=100087101992823"><img src="static/facebook.webp" alt=""></a>
-
-    </div>
-    <div class="crline">
-        <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigF/h/6tVROV7LNCQ" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

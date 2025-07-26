@@ -6,124 +6,429 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Photography | By RaviTeja</title>
     <link rel="shortcut icon" href="/static/fast-food-outline.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../views/contact.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        /* Font Imports */
+        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Cinzel&family=Courgette&family=Dancing+Script:wght@700&family=Lumanosimo&family=Rubik+Wet+Paint&display=swap');
+
+        /* Universal Box Sizing */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Acme', sans-serif; /* Unified font for the entire website */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            height: 98px;
+            background-color: rgb(252, 254, 255);
+            z-index: 1000;
+            padding: 0 73px;
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        .navbar .navbar-brand {
+            font-family: 'Cinzel', serif; /* Keeping Cinzel for the prominent brand name */
+            font-size: 25px;
+            letter-spacing: 5px;
+            color: #333;
+            padding-bottom: 10px;
+            margin-right: auto;
+        }
+
+        .navbar-nav .nav-link {
+            text-decoration: none;
+            color: rgba(32, 32, 31, 0.812);
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 25px;
+            transition: font-size 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black;
+            font-size: 22px;
+        }
+
+        /* Main Content - Contact Specific */
+        .mhead {
+            text-align: center;
+            font-family: 'Cinzel', serif; /* Distinct font for main page heading */
+            padding-top: 170px;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allow content to wrap */
+            padding: 20px 15px;
+            justify-content: center; /* Center content horizontally */
+        }
+
+        .box1 {
+            flex: 1 1 45%; /* Image takes roughly half width on larger screens */
+            min-width: 300px; /* Minimum width for image section */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .box1 img {
+            max-width: 100%; /* Ensure image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+
+        .box2 {
+            flex: 1 1 55%; /* Form takes slightly more than half */
+            min-width: 300px; /* Minimum width for form section */
+            padding: 30px; /* Adjust padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center form content */
+        }
+
+        .box2 h2 {
+            font-family: 'Cinzel', serif; /* Distinct font for subheading */
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .box2 p {
+            text-align: center; /* Center paragraph text */
+            padding: 0 20px; /* Adjust padding for text */
+            margin-bottom: 30px;
+            font-size: 1em;
+        }
+        .box2 p a {
+            color: #007bff; /* Link color */
+            text-decoration: none;
+        }
+        .box2 p a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            width: 100%; /* Make form take full width of its container */
+            max-width: 450px; /* Limit form width for better design */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        form label {
+            display: block; /* Make label block for full width */
+            text-align: left; /* Align label text to left */
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            font-family: 'Cinzel', serif; /* Distinct font for labels */
+        }
+        form label sup {
+            color: red; /* Asterisk for required fields */
+        }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%; /* Make inputs fill parent width */
+            padding: 10px;
+            margin-bottom: 15px; /* Space between fields */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: 'Acme', sans-serif;
+            resize: vertical; /* Allow vertical resizing for textarea */
+        }
+        form textarea {
+            min-height: 100px; /* Minimum height for textarea */
+        }
+
+        .butn {
+            padding: 10px 25px; /* Larger padding for button */
+            border: 1px solid rgb(141, 141, 140);
+            background-color: azure;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .butn:hover {
+            background-color: #e0f2f7;
+            border-color: #999;
+        }
+
+
+        /* Footer Styling */
+        .foot {
+            display: none; /* Hide the social icons section as requested */
+        }
+
+        .crline {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            background-color: rgb(252, 254, 255);
+            border-top: 1px solid #eee;
+        }
+
+        .crline p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* --- Responsive Adjustments (Media Queries) --- */
+
+        /* Navbar: Toggle for md breakpoint and below (768px) */
+        @media (min-width: 768px) {
+            .navbar .container-fluid {
+                justify-content: space-between;
+            }
+            .navbar-expand-md .navbar-collapse {
+                justify-content: flex-end;
+            }
+        }
+
+        /* For screens smaller than 1200px */
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 0 50px;
+            }
+            .navbar .navbar-brand {
+                font-size: 22px;
+            }
+            .navbar-nav .nav-link {
+                padding: 10px 20px;
+            }
+
+            .mhead {
+                font-size: 2em;
+            }
+        }
+
+        /* For screens smaller than 992px (tablets) */
+        @media (max-width: 991.98px) {
+            /* Adjustments for collapsed navbar */
+            .navbar {
+                height: auto;
+                align-items: center;
+                padding: 10px 20px;
+                flex-direction: column;
+            }
+            .navbar .navbar-brand {
+                padding-bottom: 5px;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+            .navbar-toggler {
+                margin-top: 10px;
+            }
+            .navbar-collapse {
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-link {
+                padding: 8px 0;
+            }
+
+            .mhead {
+                padding-top: 120px;
+                font-size: 2em;
+            }
+
+            .container {
+                flex-direction: column; /* Stack image and form vertically */
+                align-items: center;
+            }
+            .box1, .box2 {
+                flex: 1 1 100%; /* Take full width when stacked */
+                padding: 10px; /* Adjust padding */
+            }
+            .box1 img {
+                max-width: 80%; /* Adjust image size */
+            }
+            .box2 h2 {
+                font-size: 1.8em;
+            }
+            .box2 p {
+                padding: 0 10px;
+            }
+        }
+
+        /* For screens smaller than 768px (large phones) */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand {
+                font-size: 20px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 16px;
+            }
+
+            .mhead {
+                font-size: 1.8em;
+            }
+            .box1 img {
+                max-width: 90%;
+            }
+            .box2 h2 {
+                font-size: 1.5em;
+            }
+            form {
+                padding: 15px;
+            }
+        }
+
+        /* For screens smaller than 576px (small phones) */
+        @media (max-width: 575.98px) {
+            .navbar .navbar-brand {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+
+            .mhead {
+                padding-top: 100px;
+                font-size: 1.5em;
+            }
+            .box1 img {
+                max-width: 100%;
+            }
+            .box2 p {
+                font-size: 0.9em;
+            }
+            form {
+                padding: 10px;
+            }
+            form input[type="text"],
+            form textarea {
+                font-size: 0.9em;
+            }
+            .butn {
+                padding: 8px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="navbar">
-        <div class="logo">
-            <h4>RaviTeja</h4>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">RaviTeja</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/books">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1 class="mhead">Contact Us</h1>
+
+        <div class="container">
+            <div class="box1">
+                <img src="/static/contactpic.webp" alt="Contact Us Image">
+            </div>
+            <div class="box2">
+                <h2>GET IN TOUCH</h2>
+                <p>
+                    We'd love to hear from you! Whether you have questions about food photography services, book inquiries, collaboration ideas, or simply want to share your culinary passion, please don't hesitate to reach out. Your feedback and inquiries are important to us.
+                </p>
+                <p>
+                    Call: 906-356-2208 | Email: <a href="mailto:rtraviteja2674@gmail.com">rtraviteja2674@gmail.com</a>
+                </p>
+
+                <form method="post">
+                    <label for="fname">
+                        <h4>First Name <sup>*</sup></h4>
+                    </label>
+                    <input type="text" name="fname" id="fname" required>
+
+                    <label for="lname">
+                        <h4>Last Name <sup>*</sup></h4>
+                    </label>
+                    <input type="text" name="lname" id="lname">
+
+                    <label for="email" class="emailcls">
+                        <h4>Email <sup>*</sup></h4>
+                    </label>
+                    <input type="text" name="email" id="email" required>
+
+                    <label for="subject" class="subjectcls">
+                        <h4>Subject<sup>*</sup></h4>
+                    </label>
+                    <input type="text" name="subject" id="subject" required>
+
+                    <label for="message" class="messagecls">
+                        <h4>Message <sup>*</sup></h4>
+                    </label>
+                    <textarea name="message" id="message" rows="5" required></textarea>
+
+                    <button name="button" class="butn" id="btn" onclick="submit()">Submit</button>
+                </form>
+            </div>
         </div>
-        <div class="navelements">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/aboutus">About Us</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/books">Books</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+
+        <div class="crline">
+            <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
         </div>
-    </div>
-
-    <div class="mhead">
-
-        <h1>Contact Us</h1>
-    </div>
-
-
-    <div class="container">
-        <div class="box1">
-            <img src="/static/contactpic.webp" alt="">
         </div>
-        <div class="box2">
-            <h2>GET IN TOUCH</h2>
-            <P>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story
-                and let your users know a little more about you.</P>
-
-            <p> Call: 906-356-2208 | <a href="https://mail.google.com/mail/u/0/#inbox">Email:
-                    rtraviteja2674@gmail.com</a>
-            
-            <form method="post">
-
-
-                <label for="fname">
-                    <h4>First Name <sup>*</sup></h4>
-                </label>
-                <input type="text" name="fname" id="fname" required>
-                <br>
-
-                <label for="lname">
-                    <h4>Last Name <sup>*</sup></h4>
-                </label>
-                <input type="text" name="lname" id="lname" >
-                <br>
-
-                <label for="email" class="emailcls">
-                    <h4>Email <sup>*</sup></h4>
-                </label>
-                <input type="text" name="email" id="email" required>
-                <br>
-
-                <label for="subject" class="subjectcls">
-                    <h4>subject<sup>*</sup></h4>
-                </label>
-                <input type="text" name="subject" id="subject" required>
-                <br>
-
-                <label for="message" class="messagecls">
-                    <h4>Message <sup>*</sup></h4>
-                </label>
-
-                <textarea name="message" id="message" cols="30" rows="10" required></textarea>
-
-                <br>
-
-                <!-- <input type="button" id="btn" onclick="submit()" class="butn" value="Submit&nbsp; &#10084; "> -->
-                <button name="button" class="butn" id="btn" onclick="submit()">Submit&nbsp; &#10084;</button>
-
-
-
-
-
-            </form>
-
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    <div class="foot">
-        <a href="https://twitter.com/Raviteja_2674"><img src="static/Twitter.webp" alt=""></a>
-        <a href="https://www.instagram.com/raviteja_2674/"><img src="static/Instagram.webp" alt=""></a>
-        <a href="https://www.facebook.com/profile.php?id=100087101992823"><img src="static/facebook.webp" alt=""></a>
-
-    </div>
-    <div class="crline">
-        <p> © 2035 by The Art of Food. Powered and secured by Teja..</p>
-    </div>
 
     <script>
         function submit() {
-            // var alert  = "Your Form is Submitted Succesfully..."
-            // alert(alert);
-
-            alert("Your Form is Submitted Succesfully...");
-
-
-
+            alert("Your Form is Submitted Successfully!");
         }
-        // $("#btn").click(function () {
-        //     alert("The Form has been Submitted.");
-        // });
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigF/h/6tVROV7LNCQ" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
